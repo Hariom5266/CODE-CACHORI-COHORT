@@ -1,0 +1,33 @@
+# Ignore private and temp folders
+/private/
+/temp/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+
+# Ignore node_modules (if using Node.js)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore compiled files (Java, Python, etc.)
+*.class
+*.pyc
+
+# Ignore IDE-specific files (for example, Visual Studio Code)
+.vscode/
+
+# Ignore npm-debug logs (if using Node.js)
+npm-debug.log*
+
+# Ignore .env files (for environment variables)
+.env
+
+# Ignore other sensitive files
+*.bak
+*.swp

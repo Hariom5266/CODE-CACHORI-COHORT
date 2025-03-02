@@ -1,0 +1,19 @@
+create an array containing different types of tea
+
+add "chamomile tea" to the existing list of teas
+
+remove "Oolong Tea" from the list of teas.
+
+Filter the list to only include teas that are caffeinated.
+
+Sort the list of teas in alphabetical order.
+
+USe a for loop to priunt each type of tea in the array.
+
+Use a for loop to count how many teas are caffeinated (excluding "Herbal Tea").
+
+Use a for loop to create a new array with all tea names in uppercase.
+
+use a for loop to find the tea name with the most characters.
+
+use a for loop to reverse the order of teas in the array. 
