@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# chai-cohort
-This repository serves as a comprehensive collection of all the learning materials and resources from the cohort led by Hitesh Sir and Piyush Garg. It includes various educational content and projects that contribute to my continuous learning journey.
-<<<<<<< HEAD
-=======
->>>>>>> b656779 (Initial commit - Chai Aur Cohort setup)
 # <h1 align="center">Chai Aur Cohort</h1>
 
 <!-- Social Media Links -->
@@ -21,7 +15,7 @@ This repository serves as a comprehensive collection of all the learning materia
 ## 📌 Full Stack Cohort Assignments & CSS Challenges
 
 Welcome to Chai Aur Cohort! ☕🚀
-This repo is all about building real-world projects and products while tackling CSS challenges, UI clones, and weekly assignments from the Full Stack cohort by Hitesh Sir & Piyush Garg. Here, you'll find hands-on solutions, experiments, and fully functional projects using HTML, CSS, JavaScript, and backend technologies. Let’s build, ship, and scale! 🔥💻
+This repository serves as a comprehensive collection of all the learning materials and resources from the cohort led by Hitesh Sir and Piyush Garg. It includes various educational content and projects that contribute to my continuous learning journey. Here, you'll find hands-on solutions, experiments, and fully functional projects using HTML, CSS, JavaScript, and backend technologies. Let's build, ship, and scale! 🔥💻
 
 ---
 
@@ -84,10 +78,3 @@ This repo is all about building real-world projects and products while tackling 
 
 💡 Eat, Code, Sleep, Repeat 🍵
 ---
-
-=======
->>>>>>> 179d5c42233146a1ee97dab45e3b69fc5f1e0398
-=======
-# ChaiCachoriCohort
-This repository serves as a comprehensive collection of all the learning materials and resources from the cohort led by Hitesh Sir and Piyush Garg. It includes various educational content and projects that contribute to my continuous learning journey.
->>>>>>> e49b7706c324d63f4647739a6ffa0190f6edb174
