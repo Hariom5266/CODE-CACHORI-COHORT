@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #8A2BE2;
+    --secondary-color: #20B2AA;
+    --text-color: #ffffff;
+    --bg-color: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 600px;
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Export mode */
+.export-mode {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.quote-author {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.new-quote {
+    background: var(--primary-color);
+    color: white;
+}
+
+.copy-btn {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.twitter-btn {
+    background: #1da1f2;
+    color: white;
+}
+
+.export-btn {
+    background: #f39c12;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}

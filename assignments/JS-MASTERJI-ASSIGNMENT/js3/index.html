@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container" id="quoteContainer">
+        <p class="quote-text" id="quoteText">Loading quote...</p>
+        <p class="quote-author" id="quoteAuthor"></p>
+        <div class="buttons">
+            <button class="new-quote" onclick="fetchQuote()">New Quote</button>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+            <button class="twitter-btn" onclick="shareOnTwitter()">Tweet</button>
+            <button class="export-btn" onclick="exportQuote()">Export</button>
+        </div>
+        <p class="footer">Built with ❤️ Hariom Joshi</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
