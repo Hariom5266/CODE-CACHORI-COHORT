@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management App</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f6f8f9;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #2c7be5;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .add-task-btn, .invite-btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .add-task-btn {
+            background-color: #2c7be5;
+            color: white;
+            border: none;
+        }
+
+        .invite-btn {
+            background-color: white;
+            color: #2c7be5;
+            border: 1px solid #2c7be5;
+        }
+
+        .kanban-board {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            background-color: #f1f2f4;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .column-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #5e6c84;
+        }
+
+        .task {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            cursor: move;
+        }
+
+        .task-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .task-description {
+            color: #5e6c84;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .task-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+        .tag-design {
+            background-color: #ff5630;
+            color: white;
+        }
+
+        .tag-backend {
+            background-color: #0052cc;
+            color: white;
+        }
+
+        .dragging {
+            opacity: 0.5;
+            transform: rotate(3deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Your tasks</h1>
+        <div class="header-actions">
+            <button class="add-task-btn">+ Add a task</button>
+            <button class="invite-btn">Invite</button>
+        </div>
+    </div>
+
+    <div class="kanban-board">
+        <div class="column" id="todo">
+            <div class="column-header">
+                <h3>TO DO</h3>
+            </div>
+            <div class="tasks">
+                <div class="task" draggable="true">
+                    <div class="task-title">Design User Interface</div>
+                    <div class="task-description">Create wireframes and high-fidelity designs for the app's main screens</div>
+                    <div class="task-tag tag-design">Design</div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-title">Set Up Backend Infrastructure</div>
+                    <div class="task-description">Prepare the server environment and database for app development</div>
+                    <div class="task-tag tag-backend">Backend</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column" id="doing">
+            <div class="column-header">
+                <h3>DOING</h3>
+            </div>
+            <div class="tasks">
+                <div class="task" draggable="true">
+                    <div class="task-title">Design a sign up page</div>
+                    <div class="task-tag tag-design">Design</div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-title">Develop Authentication Module</div>
+                    <div class="task-description">Prepare the server environment and database</div>
+                    <div class="task-tag tag-backend">Backend</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column" id="done">
+            <div class="column-header">
+                <h3>DONE</h3>
+            </div>
+            <div class="tasks">
+                <div class="task" draggable="true">
+                    <div class="task-title">Research Target Audience</div>
+                    <div class="task-description">Gather insights on potential users' needs and behaviors</div>
+                    <div class="task-tag tag-design">Design</div>
+                </div>
+                <div class="task" draggable="true">
+                    <div class="task-title">Finalize a logo</div>
+                    <div class="task-description">Choose a logo from one of the logo directories online</div>
+                    <div class="task-tag tag-design">Design</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tasks = document.querySelectorAll('.task');
+            const columns = document.querySelectorAll('.column');
+
+            tasks.forEach(task => {
+                task.addEventListener('dragstart', dragStart);
+                task.addEventListener('dragend', dragEnd);
+            });
+
+            columns.forEach(column => {
+                column.addEventListener('dragover', dragOver);
+                column.addEventListener('drop', drop);
+            });
+
+            function dragStart(e) {
+                e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+                e.target.classList.add('dragging');
+            }
+
+            function dragEnd(e) {
+                e.target.classList.remove('dragging');
+            }
+
+            function dragOver(e) {
+                e.preventDefault(); // Allow drop
+            }
+
+            function drop(e) {
+                e.preventDefault();
+                const draggedTask = document.querySelector('.dragging');
+                const targetColumn = e.currentTarget.querySelector('.tasks');
+                
+                // Prevent moving if it's the same column
+                if (targetColumn !== draggedTask.closest('.tasks')) {
+                    targetColumn.appendChild(draggedTask);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

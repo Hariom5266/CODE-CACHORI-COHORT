@@ -1,0 +1,9 @@
+Prompt:
+"Explain the concept of [tech topic] in simple and short terms, using easy-to-understand language, like explaining to a 5-year-old."
+
+Jaise agar aap MongoDB aur Mongoose ka difference samajhna chahte ho, toh prompt kuch aise ho sakta hai:
+
+Example:
+"Explain the difference between MongoDB and Mongoose in simple and short terms, using easy-to-understand language, like explaining to a 5-year-old."
+
+Isse AI ko clear idea milega ki aapko technical concept ko simple aur short tareeke se samajhna hai.

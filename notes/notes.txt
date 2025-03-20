@@ -1,0 +1,28 @@
+ORM (Object-Relational Mapping) ek technique hai jo database ke data ko objects mein convert kar deti hai, taaki developers ko complex SQL queries likhne ki zarurat na pade. Isse aap easily apne code mein data ke saath kaam kar sakte ho bina manually database ko samjhe. Matlab, ORM ek bridge ka kaam karta hai code aur database ke beech. Simple words mein, yeh coding ko asaan bana deta hai.
+
+ORM:
+
+Relational databases (e.g., MySQL).
+Data stored in tables.
+Converts data into objects.
+
+ODM:
+
+NoSQL databases (e.g., MongoDB).
+Data stored in documents (JSON/BSON).
+Converts data into objects.
+Key Difference: ORM is for relational databases, ODM is for NoSQL databases.
+
+MongoDB: Ye ek database hai, jahan data store hota hai.
+Mongoose: Ye ek library hai, jo MongoDB ke saath kaam karne ko aasan banati hai.
+
+URI (Uniform Resource Identifier): Ye ek identifier hai jo kisi bhi cheez ko uniquely identify karta hai, jaise koi file ya resource ko. URI kaafi general hota hai, kisi bhi cheez ko identify karne ke liye use ho sakta hai.
+
+URL (Uniform Resource Locator): Ye ek type ka URI hai, jo specific address deta hai kisi resource ka internet pe. Jaise website ka address, http://google.com.
+
+Short mein:
+
+URI: Har cheez ko pehchaan dene ka tareeka.
+URL: URI ka ek special type, jo address batata hai online resource ka.
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Board</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="header">
+    <h1 class="heading-1">Kanban Board</h1>
+    <div>
+      <button class="myBtn" id="addTask">+Add Task</button>
+      <button class="myBtn" id="addColumn">+Add Column</button>
+    </div>
+  </nav>
+
+  <main class="kanban-board">
+    <!-- TO DO Column -->
+    <div class="column" id="todo">
+      <div class="column-icon-wrapper">
+        <div class="column-icon"></div>
+        <h3 class="column-header">TO DO</h3>
+      </div>
+    </div>
+
+    <!-- DOING Column -->
+    <div class="column" id="doing">
+      <div class="column-icon-wrapper">
+        <div class="column-icon-orange"></div>
+        <h3 class="column-header">DOING</h3>
+      </div>
+    </div>
+
+    <!-- DONE Column -->
+    <div class="column" id="done">
+      <div class="column-icon-wrapper">
+        <div class="column-icon-green"></div>
+        <h3 class="column-header">DONE</h3>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add Task Modal -->
+  <div class="modal" id="taskModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Add New Task</h2>
+        <span class="close-btn">&times;</span>
+      </div>
+      <form id="taskForm">
+        <div class="form-group">
+          <label class="form-label" for="taskTitle">Task Title</label>
+          <input type="text" id="taskTitle" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="taskDesc">Description</label>
+          <textarea id="taskDesc" class="form-input" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Task Type</label>
+          <div class="tag-selector">
+            <div class="tag-option tag-design" data-tag="design">Design</div>
+            <div class="tag-option tag-writing" data-tag="writing">Writing</div>
+            <div class="tag-option tag-dev" data-tag="dev">Development</div>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Add Task</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Column Modal -->
+  <div class="modal" id="columnModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Add New Column</h2>
+        <span class="close-btn">&times;</span>
+      </div>
+      <form id="columnForm">
+        <div class="form-group">
+          <label class="form-label" for="columnTitle">Column Title</label>
+          <input type="text" id="columnTitle" class="form-input" required>
+        </div>
+        <button type="submit" class="submit-btn">Add Column</button>
+      </form>
+    </div>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
