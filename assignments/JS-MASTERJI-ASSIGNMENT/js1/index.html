@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker with Timeline & Calendar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2>Daily Mood Tracker 😊</h2>
+
+    <div class="mood-options">
+        <span class="mood-option">😊</span>
+        <span class="mood-option">😢</span>
+        <span class="mood-option">😐</span>
+        <span class="mood-option">🤩</span>
+        <span class="mood-option">😠</span>
+        <span class="mood-option">😴</span>
+        <span class="mood-option">😰</span>
+        <span class="mood-option">❤️</span>
+    </div>
+
+    <button class="saveMood">Save/Update Mood</button>
+
+    <div class="timeline">
+        <h3>Past Mood Timeline</h3>
+        <div class="filter-buttons">
+            <button class="filter-btn" onclick="loadMoodHistory('day')">Day</button>
+            <button class="filter-btn" onclick="loadMoodHistory('week')">Week</button>
+            <button class="filter-btn" onclick="loadMoodHistory('month')">Month</button>
+        </div>
+        <ul id="moodHistory"></ul>
+    </div>
+    
+
+    <h3>Calendar View</h3>
+    <div class="calendar" id="calendarView"></div>
+<script src="app.js"></script>
+</body>
+</html>
