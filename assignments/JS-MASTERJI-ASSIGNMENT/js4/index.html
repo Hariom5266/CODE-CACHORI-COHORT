@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Book Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>📖 Modern Book Library</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search by title, author, or category...">
+            <button onclick="searchBooks()">🔍</button>
+        </div>
+    </header>
+
+    <div class="controls">
+        <div class="view-toggle">
+            <button id="grid-view" class="active">⬜ Grid</button>
+            <button id="list-view">📄 List</button>
+        </div>
+        <div class="sort-container">
+            <label for="sort">Sort by:</label>
+            <select id="sort" onchange="sortBooks()">
+                <option value="default">Default</option>
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="date">Published Date</option>
+                <option value="publisher">Publisher</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="books-container" class="grid-view">
+        <p class="loading">Loading books...</p>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
